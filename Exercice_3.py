@@ -40,7 +40,7 @@ def manquant_2(tableau):
     nombre_manquant = somme_attendue ^ somme_reelle
 
     # Stocker le nombre manquant dans la table SQLite
-    connection = sqlite3.connect('database.db')  # Remplacez 'database.db' par le nom de votre base de données
+    connection = sqlite3.connect('database.db')
     cursor = connection.cursor()
     cursor.execute("CREATE TABLE IF NOT EXISTS nombres_manquants_xor (nombre INTEGER)")
     cursor.execute("INSERT INTO nombres_manquants_xor VALUES (?)", (nombre_manquant,))
